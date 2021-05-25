@@ -21,11 +21,15 @@
           var pos = Math.random() * 200 + 'px';
           var pos1 = Math.random() * 200 + 'px';
           var pos2 = Math.random() * 200 + 'px';
-          console.log(pos);
-          document.getElementById('button').style.left = pos;
-          document.getElementById('button').style.top = pos1;
-          document.getElementById('button').style.right = pos2;
-          document.getElementById('button').style.backgroundColor = newColor;
+          var t = 0;
+          while (t < 10) 
+          {
+            document.getElementById('button').style.left = pos;
+            document.getElementById('button').style.top = pos1;
+            document.getElementById('button').style.right = pos2;
+            document.getElementById('button').style.backgroundColor = newColor;
+          }
+          console.log("stop");
         }
 
         </script>
