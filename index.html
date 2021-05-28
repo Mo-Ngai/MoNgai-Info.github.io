@@ -8,6 +8,7 @@
         var t = 0;
 
         function click1(){      
+          document.getElementById("button").style.display="none";
           document.getElementById("song2").pause();
           document.getElementById("song").play();
           document.getElementById('body').style.backgroundImage = "url('https://www.scaryforkids.com/pics/scary-pictures.jpg')";
@@ -26,7 +27,7 @@
           var pos = Math.random() * 200 + 'px';
           var pos1 = Math.random() * 200 + 'px';
           var pos2 = Math.random() * 200 + 'px';
-          if (t < 10)
+          if (t < 9)
           {
             document.getElementById('button').style.left = pos;
             document.getElementById('button').style.top = pos1;
@@ -37,7 +38,9 @@
           }
           else
           {
-            console.log("stop");
+            document.getElementById('button').style.left = "50%";
+            document.getElementById('button').style.top = "50%";
+            document.getElementById('button').style.backgroundColor = newColor;
           }
         }
         </script>
@@ -61,7 +64,7 @@
     <body id="body">
       <div onmousemove="music()">Click me to paly music</div>
       <div>If you can click that button, you will get my selfie</div>
-      <input type = "button" value = 'Click' onclick = 'click1()' onmousemove='move()' id='button' /><br><br>
+        <input type = "button" value = 'Click' onclick = 'click1()' onmousemove='move()' id='button' />
       <audio id="song2">
         <source src="coco.mp3" type="audio/mpeg"/>
       </audio>
