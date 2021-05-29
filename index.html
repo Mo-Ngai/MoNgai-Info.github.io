@@ -8,6 +8,7 @@
         var t = 0;
 
         function click1(){      
+          document.getElementById("music").style.display="none";
           document.getElementById("button").style.display="none";
           document.getElementById("song").play();
           document.getElementById("song2").pause();
@@ -17,6 +18,9 @@
         
         function music(){
           document.getElementById("song2").play();
+          document.getElementById("music").value = "Actually u need to click the button below hehe";
+          document.getElementById("button").style.visibility = "visible";
+          document.getElementById("text").style.visibility = "visible";
         }
 
         function move(){
@@ -54,18 +58,29 @@
           }
           #button
           {
+            visibility: hidden;
+            display: "block";
             position:absolute;
             right: 0px;
             left: 0px;
             font-size: 16px;
           }
+          #music
+          {
+            display: "block";
+            font-size: 32px;
+          }
+          #text
+          {
+            visibility: hidden;
+          }
         </style>
     </head>
         
     <body id="body">
-      <div onmousemove="music()">Click me to paly music</div>
-      <div>If you can click that button, you will get my selfie</div>
-        <input type = "button" value = 'Click' onclick = 'click1()' onmousemove='move()' id='button' />
+      <input type = "button" id="music" onclick="music()" value = "Click me to get selfie!"/>
+      <div id="text">If you can click that button, you will get my selfie</div>
+        <input type = "button" value = 'Click' onclick = 'click1()' onmousemove='move()' id='button'/>
       <audio id="song2">
         <source src="coco.mp3" type="audio/mpeg"/>
       </audio>
